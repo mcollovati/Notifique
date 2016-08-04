@@ -19,8 +19,16 @@ package org.vaadin.notifique;
 import com.vaadin.event.LayoutEvents.LayoutClickEvent;
 import com.vaadin.event.LayoutEvents.LayoutClickListener;
 import com.vaadin.server.Resource;
-import com.vaadin.ui.*;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
+import com.vaadin.ui.CssLayout;
+import com.vaadin.ui.CustomComponent;
+import com.vaadin.ui.Embedded;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.themes.Reindeer;
 import org.vaadin.jouni.animator.AnimatorProxy;
 import org.vaadin.jouni.animator.shared.AnimType;
@@ -30,6 +38,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
 
 public class Notifique extends CustomComponent {
 
@@ -354,8 +363,11 @@ public class Notifique extends CustomComponent {
 
             //unfortunately we can not directly remove animation from AnimationProxy.queue
             //so we need to cancel them to prevent adding them to the PaintTarget
-            for (AnimatorProxy.Animation runningAnimation : runningAnimations)
-                runningAnimation.cancel();
+            // marco_753 cancel does not exist anymore
+            //for (AnimatorProxy.Animation runningAnimation : runningAnimations)
+            //    runningAnimation.cancel();
+            // marco_753
+
             runningAnimations.clear();
         }
     }

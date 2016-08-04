@@ -47,6 +47,7 @@ public class NotifiqueSampleApplicationUI extends UI implements
         stack.setClickListener(this);
         stack.setHideListener(this);
         stack.setWidth("100%");
+
         view.addComponent(stack);
 
         HorizontalLayout btns = new HorizontalLayout();
